@@ -59,7 +59,11 @@ public class ObjectOutletTest : MonoBehaviour {
 ```
 Perceba que passamos `typeof(ComponentInterface)` para o construtor do atributo `InterfaceOutlet`, assim definindo o tipo da interface que o componente deve implementar para ser posível plugá-lo à este outlet.
 
-**Obs:**O tipo da propriedade criada sempre deve ser `UnityEngine.Object`. Caso contrário, o comportamento é indefinido.
+**Obs:** O tipo da propriedade criada sempre deve ser `UnityEngine.Object`. Caso contrário, o comportamento é indefinido.
+
+UML:
+
+![uml](uml.png)
 
 #### Criando um componente:
 A criação de componetes é bastante direta: Basta criar um script `MonoBehaviour` que implemente a interface de componente criada anteriormente.
@@ -83,6 +87,10 @@ public class ComponentScript : MonoBehaviour, ComponentOutletInterface
 
 ```
 
+UML:
+
+![uml](uml2.png)
+
 #### Plugando um componente em um Outlet:
 
 Esse plugin usa as funcionalidades do editor do Unity para facilitar a integração entre software e seu componente.
@@ -102,6 +110,10 @@ if (component != null) {
 ```
 
 Obs: É necessário checar se a propriedade do componente está nula. Caso esteja, significa que nenhum componente foi plugado ao Outlet.
+
+UML:
+
+![uml](uml3.png)
 
 ## Distribuíndo componentes
 A distribuição de componentes fica facilitada, já que, para distribuir um componente que foi feito para uma interface específica, basta empacotar todos arquivos e depêndencias desse componente em um `UnityPackage` utilizando o próprio sistema de empacotamento do Unity3D.
