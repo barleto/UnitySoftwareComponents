@@ -35,6 +35,10 @@ public interface ComponentInterface
 }
 ```
 
+UML:
+
+![uml](interfaceUML.png)
+
 #### Adicionando um InterfaceOutlet à uma classe:
 
 Em uma novo script `MonoBehaviour`(ou em um já existente), crie uma propriedade do tipo `UnityEngine.Object`, com o attributo `[InterfaceOutletAttribute(Type interfaceType)]`, como no script exemplo abaixo, `ObjectOutletTest.cs`:
