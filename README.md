@@ -1,18 +1,27 @@
 ### Implementação de componentes de software em unity:
 # Unity Interface Outlets
 
-##Descrição
+#### Author: Ricardo Zaideman Charf
+#### RA: 151238
+Esse repositório, [https://github.com/barleto/UnitySoftwareComponents](https://github.com/barleto/UnitySoftwareComponents), é resultado de um estudo feito para a disciplina MC032 - Estudo Dirigídos, do Instituto de Computação, UNICAMP, Brasil, primeiro semestre de 2017.
 
-## Racional de estudo
-A IDE e motor de jogos Unity3D é muito famosa e muito usada, seja na industria de jogos (seu foco principal), mas também em outras áreas, como desenvolvimento de aplicativos mobile, já que seu suporte multiplataforma é bastante conciso e maduro. Infelizmente, na versão atual da plataforma (5.4.3), não existe uma forma padrão para a distribuição de software específico para Unity que seja de fácil integração e utilização, por não existir uma interface comum para a estrutura do esse tipo de software.
+## Descrição
+Esse repositório contém um plugin com uma Implementação de Componentes de software para Unity3D, incluindo um diretório com um arquivo `UnityPackage` para facilitar sua instalção.
+As instruções de instalação/uso se encotram [aqui](#instuctions).
+Ao clonar o repositório e abrir a cena `cenateste.unity` é possível encontrar um exemplo do plugin funcionando.
+
+## Racional
+A IDE e motor de jogos Unity3D é muito famosa e muito usada, seja na industria de jogos (seu foco principal), mas também em outras áreas, como desenvolvimento de aplicativos mobile, já que seu suporte multiplataforma é bastante conciso e maduro. Infelizmente, na versão atual da plataforma (5.4.3), não existe uma forma padrão para a distribuição de software específico para Unity que seja de fácil integração e utilização, por não existir uma interface comum para a estrutura desse tipo de software.
 
 ## Resultado
 Com isso em mente e como parte de um estudo, foi desnvolvido um pequeno plugin para o editor Unity, chamado `Unity Interface Outlets`. Com o intúito de criar uma interface de _componentes de software_ que possa ser fácilmente integrada ao Unity, para facilitar a troca de código entre desenvolvedores melhorando a forma de como as partes do código se relacionam, aproveitando o melhor que o Unity tem a ofercer: O sistema de scripting de editor e o sistema de packaging do Unity3D, que nos permite criar extensões para adicionar novas funcionalidades e fácilmente instalá-las e compartilhá-las.
 
 O plugin `Unity Interface Outlets`, não foi desenvolvido com o intuito de resolver sozinho as questões citadas no racional. Mas sim, fornecer um software que pretende ajudar a achar uma solução, provendo uma camada de abstração para a implementação do paradigma de componentes de software que, no estudo feito, pareceu ser um caminho viável para a solução desses problemas.
 
+
 ## Instalação do plugin
-Para instalar o plugin de interface outlets, basta abrir o `Unity Package` que se encontra em [Interface Outlet Dwonload](https://github.com/barleto/UnitySoftwareComponents/raw/master/Assets/Unity%20Package/Unity_Interface_Outlet.unitypackage).
+<a name="instuctions"></a>
+Para instalar o plugin de interface outlets, basta abrir o `Unity Package` no editor do Unity, que se encontra em [Interface Outlet Download](https://github.com/barleto/UnitySoftwareComponents/raw/master/Assets/Unity%20Package/Unity_Interface_Outlet.unitypackage).
 
 ## Utilização
 
@@ -37,6 +46,12 @@ using System.Collections;
 
 public class ObjectOutletTest : MonoBehaviour {
 
+    [Header("EXAMPLE SCRIPT:")]
+    [Header("Below is an interface outlet.")]
+    [Header("You must plug an object implementing")]
+    [Header("the interface below for it to work.")]
+    [Header("")]
+
     //Outlet para componentes com interface do tipo ComponentInterface
     [InterfaceOutlet(typeof(ComponentInterface))]
     public UnityEngine.Object someComponent;
@@ -47,7 +62,7 @@ Perceba que passamos `typeof(ComponentInterface)` para o construtor do atributo 
 **O tipo da propriedade criada sempre deve ser `UnityEngine.Object`. Caso contrário, o comportamento é indefinido.**
 
 #### Criando um componente:
-A criação de componetes bastante direta: Basta criar um script `MonoBehaviour que implemente a interface de componente criada anteriormente.
+A criação de componetes é bastante direta: Basta criar um script `MonoBehaviour que implemente a interface de componente criada anteriormente.
 
 Continuando nosso exemplo, temos o novo componente `ComponentScript.cs`:
 
@@ -73,7 +88,7 @@ public class ComponentScript : MonoBehaviour, ComponentOutletInterface
 Esse plugin usa as funcionalidades do editor do Unity para facilitar a integração entre software e seu componente.
 Por causa do atributo `InterfaceOutlet`, no inspector do Unity, um novo tipo de propriedade irá aparecer, como no exemplo abaixo:
 
-IMAGEM
+![InspectorOutlet.PNG](InspectorOutlet.PNG)
 
 Para integrar o componente basta arrastar um GameObject que tenha um `MonoBehaviour` que implemente a interface requerida. Com isso, a inetgração está feita.
 
@@ -89,3 +104,4 @@ if (component != null) {
 Obs: É necessário checar se a propriedade do componente está nula. Caso esteja, significa que nenhum componente foi plugado ao Outlet.
 
 ## Distribuíndo componentes
+A distribuição de componentes, com a utilização do plugin de Interface Outlets, fica facilitada, já que, para distribuir um componente que foi feito para uma interface específica basta empacotar todos arquivos e depêndencias desse componente em um `UnityPackage` utilizando o próprio sistema de empacotamento do Unity3D.
