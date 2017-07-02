@@ -1,4 +1,4 @@
-### Implementação de componentes de software em unity:
+### Implementação de componentes de software em unity
 # Unity Interface Outlets
 
 #### Author: Ricardo Zaideman Charf
@@ -18,9 +18,8 @@ Com isso em mente e como parte de um estudo, foi desnvolvido um pequeno plugin p
 
 O plugin `Unity Interface Outlets`, não foi desenvolvido com o intuito de resolver sozinho as questões citadas no racional. Mas sim, fornecer um software que pretende ajudar a achar uma solução, provendo uma camada de abstração para a implementação do paradigma de componentes de software que, no estudo feito, pareceu ser um caminho viável para a solução desses problemas.
 
-
-## Instalação do plugin
 <a name="instuctions"></a>
+## Instalação do plugin
 Para instalar o plugin de interface outlets, basta abrir o `Unity Package` no editor do Unity, que se encontra em [Interface Outlet Download](https://github.com/barleto/UnitySoftwareComponents/raw/master/Assets/Unity%20Package/Unity_Interface_Outlet.unitypackage).
 
 ## Utilização
