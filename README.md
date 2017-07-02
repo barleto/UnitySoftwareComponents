@@ -20,7 +20,7 @@ O plugin `Unity Interface Outlets`, não foi desenvolvido com o intuito de resol
 
 <a name="instuctions"></a>
 ## Instalação do plugin
-Para instalar o plugin de interface outlets, basta abrir o `Unity Package` no editor do Unity, que se encontra em [Interface Outlet Download](https://github.com/barleto/UnitySoftwareComponents/raw/master/Assets/Unity%20Package/Unity_Interface_Outlet.unitypackage).
+Para instalar o plugin, basta abrir o `Unity Package` disponível nesse repositório, que se encontra em [Interface Outlet Download](https://github.com/barleto/UnitySoftwareComponents/raw/master/Assets/Unity%20Package/Unity_Interface_Outlet.unitypackage).
 
 ## Utilização
 
@@ -58,12 +58,13 @@ public class ObjectOutletTest : MonoBehaviour {
 }
 ```
 Perceba que passamos `typeof(ComponentInterface)` para o construtor do atributo `InterfaceOutlet`, assim definindo o tipo da interface que o componente deve implementar para ser posível plugá-lo à este outlet.
-**O tipo da propriedade criada sempre deve ser `UnityEngine.Object`. Caso contrário, o comportamento é indefinido.**
+
+**Obs:**O tipo da propriedade criada sempre deve ser `UnityEngine.Object`. Caso contrário, o comportamento é indefinido.
 
 #### Criando um componente:
-A criação de componetes é bastante direta: Basta criar um script `MonoBehaviour que implemente a interface de componente criada anteriormente.
+A criação de componetes é bastante direta: Basta criar um script `MonoBehaviour` que implemente a interface de componente criada anteriormente.
 
-Continuando nosso exemplo, temos o novo componente `ComponentScript.cs`:
+Continuando nosso exemplo, temos o novo componente `ComponentScript.cs`, que exemplifica a implementação de um componente:
 
 
 ```c#
@@ -89,10 +90,10 @@ Por causa do atributo `InterfaceOutlet`, no inspector do Unity, um novo tipo de 
 
 ![InspectorOutlet.PNG](InspectorOutlet.PNG)
 
-Para integrar o componente basta arrastar um GameObject que tenha um `MonoBehaviour` que implemente a interface requerida. Com isso, a inetgração está feita.
+Para integrar o componente basta arrastar um GameObject que tenha um `MonoBehaviour` que implemente a interface requerida. Seguindo o exemplo, arraste um GameObject que tenha o componente `ComponentScript` para a propriedade que representa o _Outlet_, como na figura acima. Com isso, a integração está feita.
 
 #### Utilizando o componente:
-Após a integração bem sucedida, é fácil utilizar o componente. Basta chamá-lo utlizando o seguinte tamplate:
+Após a integração bem sucedida, é fácil utilizar o componente. Basta chamá-lo utlizando o seguinte template:
 
 ```c#
 if (component != null) {
@@ -103,4 +104,4 @@ if (component != null) {
 Obs: É necessário checar se a propriedade do componente está nula. Caso esteja, significa que nenhum componente foi plugado ao Outlet.
 
 ## Distribuíndo componentes
-A distribuição de componentes, com a utilização do plugin de Interface Outlets, fica facilitada, já que, para distribuir um componente que foi feito para uma interface específica basta empacotar todos arquivos e depêndencias desse componente em um `UnityPackage` utilizando o próprio sistema de empacotamento do Unity3D.
+A distribuição de componentes fica facilitada, já que, para distribuir um componente que foi feito para uma interface específica, basta empacotar todos arquivos e depêndencias desse componente em um `UnityPackage` utilizando o próprio sistema de empacotamento do Unity3D.
