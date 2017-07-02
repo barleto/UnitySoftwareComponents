@@ -7,7 +7,7 @@ Esse repositório, [https://github.com/barleto/UnitySoftwareComponents](https://
 
 ## Descrição
 Esse repositório contém um plugin com uma Implementação de Componentes de software para Unity3D, incluindo um diretório com um arquivo `UnityPackage` para facilitar sua instalção.
-As instruções de instalação/uso se encotram [aqui](#instuctions).
+As instruções de instalação/uso se encontram [aqui](#instuctions).
 Ao clonar o repositório e abrir a cena `cenateste.unity` é possível encontrar um exemplo do plugin funcionando.
 
 ## Racional
