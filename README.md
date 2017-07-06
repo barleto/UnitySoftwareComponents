@@ -61,7 +61,7 @@ public class ObjectOutletTest : MonoBehaviour {
 
 }
 ```
-Perceba que passamos `typeof(ComponentInterface)` para o construtor do atributo `InterfaceOutlet`, assim definindo o tipo da interface que o componente deve implementar para ser posível plugá-lo à este outlet.
+Perceba que passamos `typeof(ComponentInterface)` para o construtor do atributo `InterfaceOutlet`, assim definindo o tipo da interface que o componente deve implementar para ser posível plugá-lo à este outlet. Em outras palavaras, utilizando o atributo, definimos uma Interface Requerida relacionada a `ComponentInterface` na classe `ObjectOutletTest`.
 
 **Obs:** O tipo da propriedade criada sempre deve ser `UnityEngine.Object`. Caso contrário, o comportamento é indefinido.
 
