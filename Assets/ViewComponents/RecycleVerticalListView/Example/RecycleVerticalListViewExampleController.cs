@@ -17,7 +17,7 @@ public class RecycleVerticalListViewExampleController :  MonoBehaviour, IRecycle
 
 	public void PopulateEachCell(GameObject cell, int index){
 		var comp = cell.GetComponentInChildren<Text> ();
-		comp.text = index.ToString();
+		comp.text = (index+1).ToString();
 	}
 
 	public float GetCellDistance(){

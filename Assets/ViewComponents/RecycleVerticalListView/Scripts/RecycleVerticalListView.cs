@@ -84,7 +84,7 @@ public class RecycleVerticalListView : MonoBehaviour {
 			DistanceBetweenElements = (listViewDelegate.GetCellDistance());
 		}
 
-		scrollRectNeededHeigth = ListLength * (DistanceBetweenElements + cellPrefabHeigth);
+		scrollRectNeededHeigth = ListLength * (DistanceBetweenElements + cellPrefabHeigth) - DistanceBetweenElements;
 
 		CreateList ();
 
