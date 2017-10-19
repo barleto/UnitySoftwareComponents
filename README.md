@@ -121,3 +121,11 @@ UML:
 
 ## Distribuíndo componentes
 A distribuição de componentes fica facilitada, já que, para distribuir um componente que foi feito para uma interface específica, basta empacotar todos arquivos e depêndencias desse componente em um `UnityPackage` utilizando o próprio sistema de empacotamento do Unity3D.
+
+## Exemplo de componente
+Um exemplo de componente, e que utiliza os `Interface Outlets`, é uma implementação de `RecycleListView` para Unity. Esse exemplo se encontra no formato de `.unitypackage` e pode ser baixado através desse [link](https://github.com/barleto/UnitySoftwareComponents/raw/master/Assets/Unity%20Package/RecycleVerticalListView%2BInterfaceOutlets.unitypackage).
+
+Pontos notáveis do exemplo:
+- Foram utilizados os `Interface Outlets` para criar um paradigma de delegates, entre a lista e o encarregado de popular suas células.
+- Os arquivos de `Interface Outlets` foram empacotados juntamente aos arquivos do componente de `RecycleListView` para evitar falaha com dependências, já que as `Interface Outlets` são dependências da `RecycleListView` e não podemos assumir que o usuário já tenha os `Interface Outlets` instalado em seu projeto. Portanto, isso é uma boa prática.
+- Dentro desse pacote, há uma cena de exemplo, mostrando o componente em funcionamento. Basta abrir a cena e apertar play para testar.
