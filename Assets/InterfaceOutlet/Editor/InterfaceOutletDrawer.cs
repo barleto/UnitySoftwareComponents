@@ -12,6 +12,9 @@ public class InterfaceOutletDrawer : PropertyDrawer {
 	float extraHeight = 0;
 
 	public override void OnGUI (Rect pos, SerializedProperty properties, GUIContent label) {
+//		That's how you wold get the property type without passing it to the annotation
+//		Debug.Log (properties.serializedObject.targetObject.GetType().GetMember(properties.name)[0].ReflectedType);
+//		Unfortunatelly, Unity will only call this custom property drawer if it's type is serializable and interfaces are NOT serializable
         Type interfaceType = getAttribute().interfaceType;
 
         // pass through label
