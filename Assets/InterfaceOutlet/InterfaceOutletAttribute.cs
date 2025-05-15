@@ -18,7 +18,7 @@ public class InterfaceOutletAttribute : PropertyAttribute{
 
 }
 
-public static class UnityEngineObjectExtention
+public static class UnityEngineObjectExtension
 {
 	public static T As<T> (this UnityEngine.Object obj) where T : class
 	{
